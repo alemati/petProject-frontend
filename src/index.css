@@ -1,13 +1,83 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* .usersColumn {
+    float: left;
+    width: 10%;
+    padding-right: 30px;
+  }
+
+.allPosts {
+    float: left;
+    width: 30%;
+    padding-right: 30px;
+  }
+
+.postsColumn {
+    float: left;
+   
+  } */
+
+/* .toggleble {
+    background-color: rgba(238, 238, 238, 0.212); 
+    color: blue;
+  } */
+
+  /* .toggleble:hover {
+    background-color: #ccc; 
+  } */
+
+  
+  /* Clear floats after the columns */
+  /* .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  } */
+
+  .right {
+    float: right;
+    background: lightpink;
+  }
+  .right:hover {
+    background: lightcoral;
+  }
+
+  .card-header:hover {
+    background: rgba(204, 204, 204, 0.39);
+  }
+
+  .card{
+    margin-bottom: 10px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.comment{
+  min-width: 200px;
+  min-height: 100px;
 }
+
+.post{
+  min-width: 200px;
+  min-height: 150px;
+}
+
+.comments-list {
+  overflow: scroll;
+  overflow-x: hidden;
+  max-height: 250px;
+}
+
+.by {
+  /* position:absolute; */
+  /* bottom:0;
+  right:0; */
+  float: right;
+  font-size: 12px;
+}
+
+.login-form {
+  margin-right: auto; 
+  margin-left: auto; 
+  width: 800px;
+  /* bottom:0;
+  right:0; */
+  /* align: center; */
+}
+

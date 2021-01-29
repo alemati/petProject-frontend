@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "bron",
+      "password": "qwer",
+      "name": "Lebron",
+      "URL": "bronURL"
+    },
+    {
+      "id": 2,
+      "username": "biggy",
+      "password": "qwer",
+      "name": "Notorious",
+      "URL": "biggyURL"
+    },
+    {
+      "id": 3,
+      "username": "bibi",
+      "password": "qwer",
+      "name": "bi",
+      "URL": "biibiURL"
+    }
+  ]
+}
