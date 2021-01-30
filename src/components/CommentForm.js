@@ -21,7 +21,6 @@ const CommentForm = ({ postId, user }) => {
         dispatch(createNewComment(newComment))
     }
 
-
     return (
         <div >
             <h5>Comment</h5>

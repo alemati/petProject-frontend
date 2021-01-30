@@ -15,8 +15,9 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 
 import {
-    useHistory
-} from 'react-router-dom'
+    Switch, Route, Link, useHistory,
+} from "react-router-dom"
+
 
 const PostPage = () => {
     const login = useSelector(state => state.login)
@@ -98,7 +99,9 @@ const PostLine = ({ post, currentUser }) => {
                 <Card.Header>
 
                     <Accordion.Toggle as={Card.Body} variant="link" eventKey={post.id}>
-                        {post.content} <p className="by">by {postCreator.name}</p>
+                        {post.content} <p className="by">by<Link className="by" to={`/user/${postCreator.url}`}>&nbsp;{ postCreator.name}</Link></p> 
+                        
+                         {/* <p className="by">by {postCreator.name}</p> */}
                     </Accordion.Toggle>
                 </Card.Header>
                 <Accordion.Collapse eventKey={post.id}>

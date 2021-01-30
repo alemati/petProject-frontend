@@ -13,6 +13,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import UsersList from './components/UsersList'
 
+import PersonalPage from './components/PersonalPage'
+
+import UserPage from './components/UserPage'
+
 
 import {
   Switch, Route, Link,
@@ -33,23 +37,21 @@ const App = () => {
   const users = useSelector(state => state.users)
 
   return (
+
     <div>
-      {/* {login === null &&
-        // <div>
-        //   <Link to="/createUser">create new user</Link>
-        //   <br />
-        //   <Link to="/">home</Link>
-        // </div>
-        <Route path="/">
-          <LoginView />
-        </Route>
-      } */}
-      
 
       <Switch>
 
         <Route path="/connections">
           <UsersList />
+        </Route>
+
+        <Route path="/personal">
+          <PersonalPage />
+        </Route>
+
+        <Route path="/user/:url">
+          <UserPage />
         </Route>
 
         <Route path="/home">
@@ -61,7 +63,8 @@ const App = () => {
         </Route>
 
         <Route path="/">
-          <LoginView />
+          {login !== null && <HomeView />}
+          {login === null && <LoginView />}
         </Route>
 
       </Switch>

@@ -11,10 +11,6 @@ import SideBarNavigation from './SideBarNavigation'
 
 import HomeView from './HomeView'
 
-// import {
-//     useHistory
-// } from 'react-router-dom'
-
 import {
     Switch, Route, Link, useHistory,
 } from "react-router-dom"
@@ -53,8 +49,7 @@ const HomeView = () => {
                 <hr />
                 <div className="row">
                     <div className="col-sm-2">
-                    <SideBarNavigation />
-                        {/* <UsersList /> */}
+                        <SideBarNavigation />
                     </div>
                     <div className="col-sm-7">
                         <PostPage />

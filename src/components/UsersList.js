@@ -12,6 +12,11 @@ import TopBar from './TopBar'
 import SideBarNavigation from './SideBarNavigation'
 import PostForm from './PostForm'
 
+
+import {
+    Switch, Route, Link, useHistory,
+} from "react-router-dom"
+
 const UsersList = () => {
     const users = useSelector(state => state.users)
     const login = useSelector(state => state.login)
@@ -50,7 +55,7 @@ const UsersList = () => {
 
 
     const neutralUser = allOtherUsers.filter(u => !myRequests.includes(u) && !myRecieved.includes(u) && !myFriends.includes(u))
-    
+
 
     return (
         <div className="container">
@@ -69,7 +74,7 @@ const UsersList = () => {
                             <Card.Header>
                                 <Accordion.Toggle as={Card.Header} variant="link" eventKey="1" >
                                     Friends
-                    </Accordion.Toggle>
+                                </Accordion.Toggle>
                             </Card.Header>
                             <Accordion.Collapse eventKey="1">
                                 <Card.Body><Friends login={login} users={users} allOtherUsers={allOtherUsers} myRecieved={myRecieved} /></Card.Body>
@@ -114,7 +119,7 @@ const UsersList = () => {
                 </div>
                 <div className="col-sm-3">
                     <h4>Other users</h4>
-                   
+
                     {neutralUser.map(user => <UserLine key={user.id} user={user} users={users} login={login} status={'stranger'} />)}
                 </div>
 
@@ -234,7 +239,7 @@ const UserLine = ({ user, users, login, status }) => {
     if (status === 'request') {
         return (
             <div>
-                {user.name}  <button onClick={() => handleRemoveRequest(user.id)}>Remove request</button>
+                <Link to={`/user/${user.url}`}>{ user.name }</Link>   <button onClick={() => handleRemoveRequest(user.id)}>Remove request</button>
                 <hr />
             </div>
         )
@@ -242,7 +247,7 @@ const UserLine = ({ user, users, login, status }) => {
     } else if (status === 'received') {
         return (
             <div>
-                {user.name} <br />
+                <Link to={`/user/${user.url}`}>{ user.name }</Link> <br />
                 <button onClick={() => handleAccept(user.id)}>Accept</button>  <button onClick={() => handleDecline(user.id)}>Decline</button>
                 <hr />
             </div>
@@ -251,7 +256,7 @@ const UserLine = ({ user, users, login, status }) => {
     } else if (status === 'friend') {
         return (
             <div>
-                {user.name} <button onClick={() => removeFriend(user.id)}>Remove friend</button>
+                <Link to={`/user/${user.url}`}>{ user.name }</Link> <button onClick={() => removeFriend(user.id)}>Remove friend</button>
                 <hr />
             </div>
         )
@@ -259,7 +264,7 @@ const UserLine = ({ user, users, login, status }) => {
     }
     return (
         <div>
-            {user.name}  <button onClick={() => handleSendRequest(user.id)}>Make a friend</button>
+            <Link to={`/user/${user.url}`}>{ user.name }</Link>   <button onClick={() => handleSendRequest(user.id)}>Make a friend</button>
             <hr />
         </div>
     )

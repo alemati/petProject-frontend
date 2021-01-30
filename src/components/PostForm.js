@@ -23,13 +23,11 @@ const PostForm = () => {
         dispatch(createNewPost(newPost))
     }
 
-
     return (
         <div >
             <h4>Create new post</h4>
             <form onSubmit={handleAddPost}>
                 <textarea className="post" value={contentt} placeholder={'Write a new post'} onChange={event => setContentt(event.target.value)}></textarea>
-                
                 <br />
                 <button type='submit'>Create new post</button>
 

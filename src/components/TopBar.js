@@ -1,7 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { logout } from '../reducers/loginReducer'
-// import TopBar from './HomeView'
 
 import {
     Switch, Route, Link, useHistory,

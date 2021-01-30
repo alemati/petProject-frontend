@@ -42,7 +42,6 @@ const HomeView = () => {
                 <div className="row">
                     <div className="col-sm-2">
                         <SideBarNavigation />
-                        {/* <UsersList /> */}
                     </div>
                     <div className="col-sm-7">
                         <PostPage />

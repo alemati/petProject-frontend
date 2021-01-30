@@ -2,17 +2,14 @@ import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import TopBar from './TopBar'
 import SideBarNavigation from './SideBarNavigation'
+import SkillForm from './SkillForm'
 
-import {
-    useParams
-  } from "react-router-dom"
 
-const UserPage = () => {
-    const url = useParams().url
+const PersonalPage = () => {
     const login = useSelector(state => state.login)
     const allPosts = useSelector(state => state.posts)
     const users = useSelector(state => state.users)
-    const currentUser = users.find(u => u.url === url)
+    const currentUser = users.find(u => u.username === login.username)
     if (!currentUser) {
         return null
     }
@@ -27,12 +24,15 @@ const UserPage = () => {
                     <SideBarNavigation />
                 </div>
                 <div className="col-sm-7">
-                    <h4>{currentUser.name}</h4>
-                    <h5>{currentUser.name}'s posts:</h5>
-                    {userPosts.map(p => <p key={p.id}>{p.content}</p>)}
+                    <h4>Me</h4>
+                    <h5>My posts:</h5>
+                    <hr />
+                    {userPosts.map(p => <p key={p.id}>{p.content} <hr /></p>)}
                 </div>
                 <div className="col-sm-3">
-                    <h4>{currentUser.name}'s skills</h4>
+                    <h4>My skills</h4>
+                    <SkillForm />
+                    
                 </div>
 
             </div>
@@ -47,4 +47,4 @@ const UserPage = () => {
     )
 }
 
-export default UserPage;
+export default PersonalPage;
