@@ -1,5 +1,5 @@
 import axios from 'axios'
-const baseUrl = 'http://localhost:3005/api/posts'
+const baseUrl = 'http://localhost:3005/api/skills'
 
 let token = null
 
@@ -22,7 +22,6 @@ const getAll = async () => {
 }
 
 const remove = async (id) => {
-    // console.log('remove is active and id in it is:', id)
     const response = await axios.delete(`${baseUrl}/${id}`)
     return response
   }

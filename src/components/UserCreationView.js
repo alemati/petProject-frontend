@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { createNewUser } from '../reducers/usersReducer'
 
 import {
-    Switch, Route, Link, useHistory
+    Link,
   } from "react-router-dom"
 
 
@@ -32,18 +32,18 @@ const UserCreationPage = () => {
     }
 
     return (
-        <div className="login-form">
+        <div className="center">
 
             <form onSubmit={handleCreateNew}>
-                username <input type='text' value={username} placeholder={'username'} onChange={event => setUsername(event.target.value)} />
+                Username <input type='text' value={username} placeholder={'3-10 symbols'} onChange={event => setUsername(event.target.value)} />
                 <br />
-                password <input type='password' value={password} placeholder={'password'} onChange={event => setpassword(event.target.value)} />
+                Password <input type='password' value={password} placeholder={'3-10 symbols'} onChange={event => setpassword(event.target.value)} />
                 <br />
-                url <input type='text' value={url} placeholder={'URL'} onChange={event => setUrl(event.target.value)} />
+                URL <input type='text' value={url} placeholder={'3-10 symbols'} onChange={event => setUrl(event.target.value)} />
                 <br />
-                name <input type='text' value={name} placeholder={'name'} onChange={event => setName(event.target.value)} />
+                Name <input type='text' value={name} placeholder={'at least 1 character'} onChange={event => setName(event.target.value)} />
                 <br />
-                <button type='submit'>Create new user</button>   <Link to="/">login</Link>
+                <button type='submit'>Create new user</button>   <Link to="/">back</Link>
             </form>
 
 

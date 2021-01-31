@@ -1,7 +1,4 @@
-
 import postService from '../services/postService'
-import { useDispatch } from 'react-redux'
-import { updateUser } from '../reducers/usersReducer'
 
 const reducer = (state = [], action) => {
     switch (action.type) {

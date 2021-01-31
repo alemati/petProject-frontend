@@ -1,12 +1,10 @@
-
 import loginService from '../services/loginService'
 import userService from '../services/userService'
 import postService from '../services/postService'
 import commentService from '../services/commentService'
+import skillService from '../services/skillService'
 
 const reducer = (state = null, action) => {
-    // console.log('LOGIN REDUCER state now: ', state)
-    // console.log('LOGIN REDUCER action', action)
 
     switch (action.type) {
         case ('LOGIN'):
@@ -26,6 +24,7 @@ export const initLogin = () => {
             userService.setToken(user.token)
             postService.setToken(user.token)
             commentService.setToken(user.token)
+            skillService.setToken(user.token)
         }
         if (loggedUserJSON) {
             const user = JSON.parse(loggedUserJSON)
@@ -48,6 +47,7 @@ export const login = (username, password) => {
             userService.setToken(user.token)
             postService.setToken(user.token)
             commentService.setToken(user.token)
+            skillService.setToken(user.token)
             dispatch({
                 type: 'LOGIN',
                 data: user
@@ -63,6 +63,7 @@ export const logout = () => {
         userService.removeToken()
         postService.removeToken()
         commentService.removeToken()
+        skillService.removeToken()
         window.localStorage.removeItem('loggedProjectUser')
         dispatch({
             type: 'LOGOUT'

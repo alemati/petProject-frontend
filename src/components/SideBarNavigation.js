@@ -1,13 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 
 const SideBarNavigation = () => {
     return (
         <div >
             <div className="sidenav">
-                <a href="/home">Posts</a> <br /> 
-                <a href="/connections/">Connections</a>  <br /> 
-                <a href="/personal">Personal</a> <br /> 
-                <a href="#">Settings</a>   
+                <Link to="/home">Posts</Link> <br />
+                <Link to="/connections">Connections</Link> <br />
+                <Link to="/personal">Personal</Link> <br />
             </div>
         </div>
     )

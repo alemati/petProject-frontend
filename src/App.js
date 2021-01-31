@@ -6,20 +6,16 @@ import { initializeUsers } from './reducers/usersReducer'
 import { initLogin } from './reducers/loginReducer'
 import { initializePosts } from './reducers/postsReducer'
 import { initializeComments } from './reducers/commentsReducer'
-
+import { initializeSkills } from './reducers/skillsReducer'
 import { useSelector, useDispatch } from 'react-redux'
-
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import UsersList from './components/UsersList'
-
 import PersonalPage from './components/PersonalPage'
-
 import UserPage from './components/UserPage'
 
 
 import {
-  Switch, Route, Link,
+  Switch, Route,
 } from "react-router-dom"
 
 const App = () => {
@@ -31,6 +27,7 @@ const App = () => {
     dispatch(initializeUsers())
     dispatch(initLogin())
     dispatch(initializePosts())
+    dispatch(initializeSkills())
   }, [dispatch])
   const login = useSelector(state => state.login)
 

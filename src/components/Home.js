@@ -1,18 +1,15 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { logout } from '../reducers/loginReducer'
-import Togglable from './Togglable'
-import UsersList from './UsersList'
 import PostPage from './PostPage'
 import PostForm from './PostForm'
-import styles from '../styles.css'
 
 import SideBarNavigation from './SideBarNavigation'
 
 import HomeView from './HomeView'
 
 import {
-    Switch, Route, Link, useHistory,
+    useHistory,
 } from "react-router-dom"
 
 const HomeView = () => {

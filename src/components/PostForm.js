@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { logout } from '../reducers/loginReducer'
 import { createNewPost } from '../reducers/postsReducer'
-import UsersList from './UsersList'
-import PostPage from './PostPage'
 
 
 const PostForm = () => {
@@ -14,13 +11,18 @@ const PostForm = () => {
     if (!login) {
         return null
     }
-    const handleAddPost = () => {
-        const newPost = {
-            content: contentt,
-            likes: 0
+    const handleAddPost = (event) => {
+        event.preventDefault()
+        try {
+            const newPost = {
+                content: contentt,
+                likes: 0
+            }
+            setContentt('')
+            dispatch(createNewPost(newPost))
+        } catch (e) {
+            
         }
-        setContentt('')
-        dispatch(createNewPost(newPost))
     }
 
     return (
@@ -30,7 +32,6 @@ const PostForm = () => {
                 <textarea className="post" value={contentt} placeholder={'Write a new post'} onChange={event => setContentt(event.target.value)}></textarea>
                 <br />
                 <button type='submit'>Create new post</button>
-
             </form>
 
         </div>

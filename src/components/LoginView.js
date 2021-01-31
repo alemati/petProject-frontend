@@ -20,11 +20,11 @@ const LoginView = () => {
     }
 
     return (
-        <div className="login-form">
+        <div className="center">
             <form onSubmit={handleLogin}>
-                username <input type='text' value={username} placeholder={'username'} onChange={event => setUsername(event.target.value)} />
+                Username <input type='text' value={username} placeholder={'3-10 symbols'} onChange={event => setUsername(event.target.value)} />
                 <br />
-                    password <input type='password' value={password} placeholder={'password'} onChange={event => setpassword(event.target.value)} />
+                Password <input type='password' value={password} placeholder={'3-10 symbols'} onChange={event => setpassword(event.target.value)} />
                 <br />
                 <button type='submit'>Login</button>     <Link to="/createUser">create new user</Link>
             </form>

@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { logout } from '../reducers/loginReducer'
 
 import {
-    Switch, Route, Link, useHistory,
+    useHistory,
 } from "react-router-dom"
 
 const TopBar = () => {

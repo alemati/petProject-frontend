@@ -8,10 +8,8 @@ import { createNewComment } from '../reducers/commentsReducer'
 const CommentForm = ({ postId, user }) => {
     const dispatch = useDispatch()
     const [value, setValue] = useState("")
-    const allComments = useSelector(state => state.comments)
-    
 
-    const handleCreateNewComment = (id) => {
+    const handleCreateNewComment = () => {
         const newComment = {
             content: value,
             postId: postId,
@@ -24,11 +22,11 @@ const CommentForm = ({ postId, user }) => {
     return (
         <div >
             <h5>Comment</h5>
-            <form onSubmit={() => handleCreateNewComment(postId)}>
+            {/* <form onSubmit={() => handleCreateNewComment()}> */}
                 <textarea className="comment" value={value} placeholder={'Write a comment'} onChange={event => setValue(event.target.value)}></textarea>
                 <br />
-                <button type='submit'>Comment</button>
-            </form>
+                <button onClick={() => handleCreateNewComment()} type='submit'>Comment</button>
+            {/* </form> */}
 
 
 

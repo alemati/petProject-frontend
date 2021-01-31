@@ -1,10 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { logout } from '../reducers/loginReducer'
 import { removePost } from '../reducers/postsReducer'
 import { updateUser } from '../reducers/usersReducer'
-import UsersList from './UsersList'
-import Togglable from './Togglable'
 
 import CommentForm from "./CommentForm"
 import CommentsList from "./CommentsList"
@@ -15,7 +12,7 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 
 import {
-    Switch, Route, Link, useHistory,
+    Link,
 } from "react-router-dom"
 
 
@@ -83,8 +80,6 @@ const PostLine = ({ post, currentUser }) => {
                                 </div>
 
                             </div>
-                            {/* <CommentForm postId={post.id} user={currentUser} />
-                            <CommentsList postId={post.id} /> */}
                         </Card.Body>
                     </Accordion.Collapse>
                 </Card>
@@ -101,7 +96,6 @@ const PostLine = ({ post, currentUser }) => {
                     <Accordion.Toggle as={Card.Body} variant="link" eventKey={post.id}>
                         {post.content} <p className="by">by<Link className="by" to={`/user/${postCreator.url}`}>&nbsp;{ postCreator.name}</Link></p> 
                         
-                         {/* <p className="by">by {postCreator.name}</p> */}
                     </Accordion.Toggle>
                 </Card.Header>
                 <Accordion.Collapse eventKey={post.id}>
@@ -116,9 +110,6 @@ const PostLine = ({ post, currentUser }) => {
                             </div>
 
                         </div>
-
-                        {/* <CommentForm postId={post.id} user={currentUser} />
-                        <CommentsList postId={post.id} /> */}
                     </Card.Body>
                 </Accordion.Collapse>
             </Card>
