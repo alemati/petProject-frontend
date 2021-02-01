@@ -5,6 +5,7 @@ import loginReducer from './reducers/loginReducer'
 import postsReducer from './reducers/postsReducer'
 import commentsReducer from './reducers/commentsReducer'
 import skillsReducer from './reducers/skillsReducer'
+import notificationReducer from './reducers/notificationReducer'
 
 import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
@@ -15,6 +16,7 @@ const reducer = combineReducers({
     posts: postsReducer,
     comments: commentsReducer,
     skills: skillsReducer,
+    notification: notificationReducer,
 })
 
 const store = createStore(

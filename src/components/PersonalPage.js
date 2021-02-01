@@ -5,6 +5,7 @@ import SideBarNavigation from './SideBarNavigation'
 import SkillForm from './SkillForm'
 
 
+
 const PersonalPage = () => {
     const login = useSelector(state => state.login)
     const allPosts = useSelector(state => state.posts)

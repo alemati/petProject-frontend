@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { logout } from '../reducers/loginReducer'
 import UsersList from './UsersList'
 import { createNewComment } from '../reducers/commentsReducer'
-
+import Button from 'react-bootstrap/Button'
 
 const CommentForm = ({ postId, user }) => {
     const dispatch = useDispatch()
@@ -25,7 +25,7 @@ const CommentForm = ({ postId, user }) => {
             {/* <form onSubmit={() => handleCreateNewComment()}> */}
                 <textarea className="comment" value={value} placeholder={'Write a comment'} onChange={event => setValue(event.target.value)}></textarea>
                 <br />
-                <button onClick={() => handleCreateNewComment()} type='submit'>Comment</button>
+                <Button onClick={() => handleCreateNewComment()} type='submit'>Comment</Button>
             {/* </form> */}
 
 

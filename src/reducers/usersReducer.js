@@ -1,5 +1,6 @@
 
 import usersService from '../services/userService'
+import { setNotification, closeNotification } from '../reducers/notificationReducer'
 
 const reducer = (state = [], action) => {
 
@@ -28,12 +29,23 @@ export const initializeUsers = () => {
 }
 
 export const createNewUser = obj => {
+    
     return async dispatch => {
-        const createdUser = await usersService.createNew(obj)
-        dispatch({
-            type: 'CREATE_NEW_USER',
-            data: createdUser,
-        })
+        try {
+            const createdUser = await usersService.createNew(obj)
+            dispatch({
+                type: 'CREATE_NEW_USER',
+                data: createdUser,
+            })
+           
+        } catch (e) {
+            console.log('error is:', e.config)
+            dispatch(setNotification('error', e.name))
+            setTimeout(() => {
+                dispatch(closeNotification())
+            }, 3000)
+        }
+
     }
 }
 

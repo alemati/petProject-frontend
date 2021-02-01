@@ -1,4 +1,6 @@
 import skillService from '../services/skillService'
+import Notification from '../components/Notification'
+import { setNotification, closeNotification } from '../reducers/notificationReducer'
 
 const reducer = (state = [], action) => {
     switch (action.type) {
@@ -40,11 +42,20 @@ export const initializeSkills = () => {
 
 export const createNewSkill = obj => {
     return async dispatch => {
-        const createdSkill = await skillService.createNew(obj)
-        dispatch({
-            type: 'CREATE_NEW_SKILL',
-            data: createdSkill,
-        })
+        try {
+            const createdSkill = await skillService.createNew(obj)
+            dispatch({
+                type: 'CREATE_NEW_SKILL',
+                data: createdSkill,
+            })
+        } catch (e) {
+            console.log('error caught in postReducer', e)
+            dispatch(setNotification('error', 'Skill should be at least 1 and at most 20 charachters long!'))
+            setTimeout(() => {
+                dispatch(closeNotification())
+            }, 3000)
+        }
+
     }
 }
 

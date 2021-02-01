@@ -1,10 +1,19 @@
-  .right {
+  .deleteButton {
     float: right;
-    background: lightpink;
-  }
-  .right:hover {
     background: lightcoral;
   }
+  .deleteButton:hover {
+    background: red;
+  }
+
+  .rightButton {
+    float: right;
+    
+  }
+   .hiddenOverFlow {
+   
+     overflow: hidden ;
+   }
 
   .card-header:hover {
     background: rgba(204, 204, 204, 0.39);
@@ -14,12 +23,22 @@
     margin-bottom: 10px;
 }
 
-/* .center {
-  margin: auto;
-  width: 30%;
-  border: 3px solid lightblue;
-  padding: 10px;
-} */
+.topBar {
+  padding-top: 25px;
+}
+
+.col1 {
+  float:left; 
+  width:100px;
+  /* background-color: #E8F6F7; */
+}
+
+.col2 {
+  float:left; 
+  /* margin-left:30px; */
+  margin-bottom: 10px;
+  /* background-color: #f2dede; */
+}
 
 .center {
   margin: 0;
@@ -47,11 +66,13 @@
   overflow-x: hidden;
   max-height: 250px;
 }
+.user-list {
+  overflow: scroll;
+  overflow-x: hidden;
+  max-height: 400px;
+}
 
 .by {
-  /* position:absolute; */
-  /* bottom:0;
-  right:0; */
   float: right;
   font-size: 12px;
 }
@@ -60,8 +81,6 @@
   margin-right: auto; 
   margin-left: auto; 
   width: 800px;
-  /* bottom:0;
-  right:0; */
-  /* align: center; */
 }
+
 

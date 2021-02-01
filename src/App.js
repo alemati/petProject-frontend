@@ -12,7 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import UsersList from './components/UsersList'
 import PersonalPage from './components/PersonalPage'
 import UserPage from './components/UserPage'
-
+import { setNotification, closeNotification } from './reducers/notificationReducer'
 
 import {
   Switch, Route,
@@ -28,6 +28,7 @@ const App = () => {
     dispatch(initLogin())
     dispatch(initializePosts())
     dispatch(initializeSkills())
+    dispatch(closeNotification())
   }, [dispatch])
   const login = useSelector(state => state.login)
 
@@ -36,6 +37,7 @@ const App = () => {
   return (
 
     <div>
+      {/* <Notification /> */}
 
       <Switch>
 

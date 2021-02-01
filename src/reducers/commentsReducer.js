@@ -1,6 +1,9 @@
 
 import commentService from '../services/commentService'
 
+import Notification from '../components/Notification'
+import { setNotification, closeNotification } from '../reducers/notificationReducer'
+
 const reducer = (state = [], action) => {
     switch (action.type) {
         case ('CREATE_NEW_COMMENT'):
@@ -27,15 +30,24 @@ export const initializeComments = () => {
 
 export const createNewComment = obj => {
     return async dispatch => {
-        const createdComment = await commentService.createNew(obj)
-        dispatch({
-            type: 'CREATE_NEW_COMMENT',
-            data: createdComment,
-        })
+        try {
+            const createdComment = await commentService.createNew(obj)
+            dispatch({
+                type: 'CREATE_NEW_COMMENT',
+                data: createdComment,
+            })
+        } catch (e) {
+            console.log('error caught in commentsReducer', e)
+            dispatch(setNotification('error', 'Comment can be at least 3 and at most 200 charachters long!'))
+            setTimeout(() => {
+                dispatch(closeNotification())
+            }, 3000)
+        }
+
     }
 }
 
-export const removeComment = ( commentId ) => {
+export const removeComment = (commentId) => {
     return async dispatch => {
         const res = await commentService.remove(commentId)
         dispatch({

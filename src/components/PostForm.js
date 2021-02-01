@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { createNewPost } from '../reducers/postsReducer'
-
+import Button from 'react-bootstrap/Button'
+import Alert from 'react-bootstrap/Alert'
 
 const PostForm = () => {
     const [contentt, setContentt] = useState("")
@@ -13,16 +14,13 @@ const PostForm = () => {
     }
     const handleAddPost = (event) => {
         event.preventDefault()
-        try {
-            const newPost = {
-                content: contentt,
-                likes: 0
-            }
-            setContentt('')
-            dispatch(createNewPost(newPost))
-        } catch (e) {
-            
+        const newPost = {
+            content: contentt,
+            likes: 0
         }
+        setContentt('')
+        dispatch(createNewPost(newPost))
+
     }
 
     return (
@@ -31,11 +29,13 @@ const PostForm = () => {
             <form onSubmit={handleAddPost}>
                 <textarea className="post" value={contentt} placeholder={'Write a new post'} onChange={event => setContentt(event.target.value)}></textarea>
                 <br />
-                <button type='submit'>Create new post</button>
+                <Button type='submit'>Create new post</Button>
             </form>
 
         </div>
     )
 }
+
+
 
 export default PostForm;

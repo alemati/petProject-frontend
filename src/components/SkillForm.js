@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { createNewSkill, removeSkill } from '../reducers/skillsReducer'
 import { updateUser } from '../reducers/usersReducer'
+import Button from 'react-bootstrap/Button'
 
 const SkillForm = () => {
     const [value, setValue] = useState("")
@@ -31,7 +32,7 @@ const SkillForm = () => {
 
             <form onSubmit={handleCreateSkill}>
                 <input value={value} placeholder={'New skill'} onChange={event => setValue(event.target.value)} />
-                <button type='submit'>Add new skill</button>
+                <Button type='submit'>Add new skill</Button>
             </form>
             <hr />
             {skillsToShow.map(skill => <SkillLine key={skill.id} skill={skill} creator={currentUser} />)}
@@ -53,7 +54,7 @@ const SkillLine = ({ skill, creator }) => {
 
     return (
         <div >
-             <p key={skill.id}>{skill.content} likes: {skill.likes.length} <button onClick={() => handleDeleteSkill(skill.id)}>Delete</button></p>
+             <p key={skill.id}>{skill.content} likes: {skill.likes.length} <Button className="deleteButton" onClick={() => handleDeleteSkill(skill.id)}>Delete</Button></p>
              <hr />
         </div>
     )

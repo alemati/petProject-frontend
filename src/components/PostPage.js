@@ -6,10 +6,11 @@ import { updateUser } from '../reducers/usersReducer'
 import CommentForm from "./CommentForm"
 import CommentsList from "./CommentsList"
 
+import Button from 'react-bootstrap/Button'
 
 import Accordion from 'react-bootstrap/Accordion'
 import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
+// import Button from 'react-bootstrap/Button'
 
 import {
     Link,
@@ -65,8 +66,9 @@ const PostLine = ({ post, currentUser }) => {
             <div>
                 <Card >
                     <Card.Header>
-                        <Accordion.Toggle as={Card.Header} variant="link" eventKey={post.id} >
-                            {post.content} <button className="right" onClick={() => handleDeletePost()}>delete</button>
+                        <Accordion.Toggle as={Card.Body} variant="link" eventKey={post.id} >
+                            {post.content} <Button className="deleteButton" onClick={() => handleDeletePost()}>delete</Button>
+                            
                         </Accordion.Toggle>
                     </Card.Header>
                     <Accordion.Collapse eventKey={post.id}>

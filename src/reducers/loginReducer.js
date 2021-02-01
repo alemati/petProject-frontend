@@ -3,6 +3,12 @@ import userService from '../services/userService'
 import postService from '../services/postService'
 import commentService from '../services/commentService'
 import skillService from '../services/skillService'
+import { setNotification, closeNotification } from '../reducers/notificationReducer'
+
+
+import {
+    Link, useHistory
+} from "react-router-dom"
 
 const reducer = (state = null, action) => {
 
@@ -53,7 +59,10 @@ export const login = (username, password) => {
                 data: user
             })
         } catch (exception) {
-            console.log('exception! Maybe wrong credentials', exception)
+            dispatch(setNotification('error', 'Wrong credentials'))
+            setTimeout(() => {
+                dispatch(closeNotification())
+            }, 3000)
         }
     }
 }

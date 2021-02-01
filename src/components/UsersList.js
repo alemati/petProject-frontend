@@ -1,8 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import userService from '../services/userService'
 import { updateUser } from '../reducers/usersReducer'
-import Togglable from './Togglable'
 
 import Accordion from 'react-bootstrap/Accordion'
 import Card from 'react-bootstrap/Card'
@@ -10,11 +8,11 @@ import Button from 'react-bootstrap/Button'
 import TopBar from './TopBar'
 
 import SideBarNavigation from './SideBarNavigation'
-import PostForm from './PostForm'
+
 
 
 import {
-    Switch, Route, Link, useHistory,
+    Link,
 } from "react-router-dom"
 
 const UsersList = () => {
@@ -81,17 +79,6 @@ const UsersList = () => {
                             </Accordion.Collapse>
                         </Card>
 
-                        {/* <Card>
-                            <Card.Header>
-                                <Accordion.Toggle as={Card.Header} variant="link" eventKey="2" >
-                                    Other users
-                    </Accordion.Toggle>
-                            </Card.Header>
-                            <Accordion.Collapse eventKey="2">
-                                <Card.Body>{neutralUser.map(user => <UserLine key={user.id} user={user} users={users} login={login} status={'stranger'} />)} </Card.Body>
-                            </Accordion.Collapse>
-                        </Card> */}
-
                         <Card>
                             <Card.Header>
                                 <Accordion.Toggle as={Card.Header} variant="link" eventKey="3" >
@@ -103,24 +90,13 @@ const UsersList = () => {
                             </Accordion.Collapse>
                         </Card>
 
-                        {/* <Card>
-                            <Card.Header>
-                                <Accordion.Toggle as={Card.Header} variant="link" eventKey="4" >
-                                    <p>My Recieved</p>
-                                </Accordion.Toggle>
-                            </Card.Header>
-                            <Accordion.Collapse eventKey="4">
-                                <Card.Body> {myRecieved.map(user => <UserLine key={user.id} user={user} users={users} login={login} status={'received'} />)}</Card.Body>
-                            </Accordion.Collapse>
-                        </Card> */}
-
-
                     </Accordion>
                 </div>
                 <div className="col-sm-3">
                     <h4>Other users</h4>
-
-                    {neutralUser.map(user => <UserLine key={user.id} user={user} users={users} login={login} status={'stranger'} />)}
+                    <div className="user-list">
+                        {neutralUser.map(user => <UserLine key={user.id} user={user} users={users} login={login} status={'stranger'} />)}
+                    </div>
                 </div>
 
             </div>
@@ -239,7 +215,7 @@ const UserLine = ({ user, users, login, status }) => {
     if (status === 'request') {
         return (
             <div>
-                <Link to={`/user/${user.url}`}>{ user.name }</Link>   <button onClick={() => handleRemoveRequest(user.id)}>Remove request</button>
+                <Link to={`/user/${user.url}`}>{user.name}</Link>   <Button className="rightButton" onClick={() => handleRemoveRequest(user.id)}>Remove request</Button>
                 <hr />
             </div>
         )
@@ -247,8 +223,8 @@ const UserLine = ({ user, users, login, status }) => {
     } else if (status === 'received') {
         return (
             <div>
-                <Link to={`/user/${user.url}`}>{ user.name }</Link> <br />
-                <button onClick={() => handleAccept(user.id)}>Accept</button>  <button onClick={() => handleDecline(user.id)}>Decline</button>
+                <Link to={`/user/${user.url}`}>{user.name}</Link> <br />
+                <Button onClick={() => handleAccept(user.id)}>Accept</Button>  <Button onClick={() => handleDecline(user.id)}>Decline</Button>
                 <hr />
             </div>
         )
@@ -256,7 +232,7 @@ const UserLine = ({ user, users, login, status }) => {
     } else if (status === 'friend') {
         return (
             <div>
-                <Link to={`/user/${user.url}`}>{ user.name }</Link> <button onClick={() => removeFriend(user.id)}>Remove friend</button>
+                <Link to={`/user/${user.url}`}>{user.name}</Link> <Button className="rightButton" onClick={() => removeFriend(user.id)}>Remove friend</Button>
                 <hr />
             </div>
         )
@@ -264,8 +240,13 @@ const UserLine = ({ user, users, login, status }) => {
     }
     return (
         <div>
-            <Link to={`/user/${user.url}`}>{ user.name }</Link>   <button onClick={() => handleSendRequest(user.id)}>Make a friend</button>
-            <hr />
+            <div className="col1">
+                <Link to={`/user/${user.url}`} className="hiddenOverFlow" >{user.name}</Link>
+            </div>
+            <div className="col2">
+                <Button className="rightButton" onClick={() => handleSendRequest(user.id)}>Make a friend</Button>
+                <hr />
+            </div>
         </div>
     )
 
