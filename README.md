@@ -1,70 +1,11 @@
-# Getting Started with Create React App
+# Pet project frontend  
+[Heroku demo](https://glacial-bayou-33164.herokuapp.com/)  
+[Backend](https://github.com/alemati/petProject-backend)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is an attempt to create fullstack application using [**M**angoDB](https://www.mongodb.com/2) [**E**xpress](https://expressjs.com/) [**R**eact](https://reactjs.org/) [**N**odeJS](https://nodejs.org/en/) stack. Goal of this project is to get some practice with web development and to learn more about fullstack by making my own mistakes and fixing them. [Project requirements](https://web-palvelinohjelmointi-20.mooc.fi/projekti) were taken from uni course that I participated in during my stidies. With this project I wanted to write software that is not far away from potential real life case and solve problems that would roughly emulate the web development process on actual working place.  
 
-## Available Scripts
+This version is far from being completely ready and I am intending to keep the code and Heroku demo updated upon acquiring more knowledge about technologies, tools, development practises etc. So far this project was very usefull and educational. During this project I already came across some nuances that gave me more knowledge/experience and as I will add more complicated features I will discover more aspects to learn from.
 
-In the project directory, you can run:
+As I mentioned before I see many ways to improve this project. Some of them are: user search feature, adding profile picture, 'settings' page (info change), better disign and layout, error handling and improved notifications,, refactoring and organasing project/forder structure better, testing. I am planning to implement those features and fixes in future.
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+If you have some project related opinion or an advice, I will be happy to hear it or read it!
