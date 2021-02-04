@@ -8,4 +8,6 @@ This version is far from being completely ready and I am intending to keep the c
 
 As I mentioned before I see many ways to improve this project. Some of them are: user search feature, adding profile picture, 'settings' page (info change), better disign and layout, error handling and improved notifications,, refactoring and organasing project/forder structure better, testing. I am planning to implement those features and fixes in future.
 
+You can also run project locally. Just download both frontend and backend, use npm start in both directories.  
+
 If you have some project related opinion or an advice, I will be happy to hear it or read it!
