@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { updateUser } from '../reducers/usersReducer'
 
@@ -18,11 +18,9 @@ import {
 const UsersList = () => {
     const users = useSelector(state => state.users)
     const login = useSelector(state => state.login)
-
     const currentUser = users.find(u => u.username === login.username)
-
     const allOtherUsers = users.filter(u => u.username !== login.username)
-
+    const [searchWord, setSearchWord] = useState("")
     const myRequests = allOtherUsers.filter(u => {
         if (u.received.includes(currentUser.id)) {
             return u
@@ -33,28 +31,14 @@ const UsersList = () => {
             return u
         }
     })
-
     const myFriends = allOtherUsers.filter(u => {
         if (u.friends.includes(currentUser.id)) {
             return u
         }
     })
 
-
-    const section = {
-        paddingTop: 5,
-        paddingLeft: 2,
-        paddingRight: 2,
-        paddingBottom: 5,
-        border: 'solid',
-        borderWidth: 2,
-        marginBottom: 5
-    }
-
-
     const neutralUser = allOtherUsers.filter(u => !myRequests.includes(u) && !myRecieved.includes(u) && !myFriends.includes(u))
-
-
+    const usersToShow = neutralUser.filter(u => u.name.toLowerCase().includes(searchWord))
     return (
         <div className="container">
             <TopBar />
@@ -62,8 +46,8 @@ const UsersList = () => {
             <div className="row">
                 <div className="col-sm-2">
                     <SideBarNavigation />
-                    {/* <UsersList /> */}
                 </div>
+
                 <div className="col-sm-7">
                     <h4>Contacts</h4>
                     <Accordion defaultActiveKey="0">
@@ -83,7 +67,7 @@ const UsersList = () => {
                             <Card.Header>
                                 <Accordion.Toggle as={Card.Header} variant="link" eventKey="3" >
                                     My requests
-                    </Accordion.Toggle>
+                                </Accordion.Toggle>
                             </Card.Header>
                             <Accordion.Collapse eventKey="3">
                                 <Card.Body>{myRequests.map(user => <UserLine key={user.id} user={user} users={users} login={login} status={'request'} />)}</Card.Body>
@@ -92,10 +76,12 @@ const UsersList = () => {
 
                     </Accordion>
                 </div>
+
                 <div className="col-sm-3">
                     <h4>Other users</h4>
+                    <input value={searchWord} placeholder={'Search'} onChange={event => setSearchWord(event.target.value)} />
                     <div className="user-list">
-                        {neutralUser.map(user => <UserLine key={user.id} user={user} users={users} login={login} status={'stranger'} />)}
+                        {usersToShow.map(user => <UserLine key={user.id} user={user} users={users} login={login} status={'stranger'} />)}
                     </div>
                 </div>
 
@@ -122,7 +108,6 @@ const Friends = ({ login, users, allOtherUsers, myRecieved }) => {
                 {friends.map(user => <UserLine key={user.id} user={user} users={users} login={login} status={'friend'} />)}
             </div>
         )
-
     }
     return (
         <div>

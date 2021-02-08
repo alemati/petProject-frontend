@@ -37,7 +37,6 @@ const SkillForm = () => {
             <hr />
             {skillsToShow.map(skill => <SkillLine key={skill.id} skill={skill} creator={currentUser} />)}
 
-
         </div>
     )
 }

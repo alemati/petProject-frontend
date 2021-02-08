@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { createNewPost } from '../reducers/postsReducer'
 import Button from 'react-bootstrap/Button'
-import Alert from 'react-bootstrap/Alert'
 
 const PostForm = () => {
     const [contentt, setContentt] = useState("")
@@ -20,7 +19,6 @@ const PostForm = () => {
         }
         setContentt('')
         dispatch(createNewPost(newPost))
-
     }
 
     return (
@@ -35,7 +33,5 @@ const PostForm = () => {
         </div>
     )
 }
-
-
 
 export default PostForm;

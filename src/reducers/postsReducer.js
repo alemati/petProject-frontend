@@ -1,5 +1,4 @@
 import postService from '../services/postService'
-import Notification from '../components/Notification'
 import { setNotification, closeNotification } from '../reducers/notificationReducer'
 
 
@@ -47,7 +46,7 @@ export const createNewPost = obj => {
 
 export const removePost = (postId) => {
     return async dispatch => {
-        const res = await postService.remove(postId)
+        await postService.remove(postId)
         dispatch({
             type: 'REMOVE_POST',
             data: postId

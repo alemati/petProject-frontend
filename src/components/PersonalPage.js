@@ -4,8 +4,6 @@ import TopBar from './TopBar'
 import SideBarNavigation from './SideBarNavigation'
 import SkillForm from './SkillForm'
 
-
-
 const PersonalPage = () => {
     const login = useSelector(state => state.login)
     const allPosts = useSelector(state => state.posts)
@@ -33,18 +31,11 @@ const PersonalPage = () => {
                 <div className="col-sm-3">
                     <h4>My skills</h4>
                     <SkillForm />
-                    
+
                 </div>
 
             </div>
         </div>
-
-
-
-
-
-
-
     )
 }
 

@@ -1,11 +1,9 @@
-import React, { useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { logout } from '../reducers/loginReducer'
-import UsersList from './UsersList'
-import { createNewComment } from '../reducers/commentsReducer'
+import React from 'react'
+import { useSelector } from 'react-redux'
+
 
 import {
-    Switch, Route, Link, useHistory,
+    Link
 } from "react-router-dom"
 
 
@@ -27,9 +25,7 @@ const CommentLine = ({ comment }) => {
     const creator = users.find(u => u.id === comment.user)
     return (
         <div>
-            {/* <span> {comment.content} <p className="by">by {creator.name}</p></span> */}
-            <span> {comment.content} <p className="by">by<Link className="by" to={`/user/${creator.url}`}>&nbsp;{ creator.name}</Link></p> </span>
-            
+            <span> {comment.content} <p className="by">by<Link className="by" to={`/user/${creator.url}`}>&nbsp;{creator.name}</Link></p> </span>
             <hr />
         </div>
     )

@@ -7,7 +7,7 @@ import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 
 import {
-    Link, useHistory
+    Link
 } from "react-router-dom"
 
 
@@ -15,7 +15,6 @@ const LoginView = () => {
     const [username, setUsername] = useState("")
     const [password, setpassword] = useState("")
     const dispatch = useDispatch()
-    const history = useHistory()
     dispatch(closeNotification())
 
     const handleLogin = (event) => {

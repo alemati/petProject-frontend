@@ -28,7 +28,6 @@ const HomeView = () => {
 
     return (
 
-
         <div >
             <div className="container">
                 <div className="row">
@@ -41,7 +40,6 @@ const HomeView = () => {
                     <div className="col-sm-2">
                         <button onClick={handleLogout}>logout</button>
                     </div>
-
                 </div>
                 <hr />
                 <div className="row">

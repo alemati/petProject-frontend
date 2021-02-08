@@ -1,7 +1,4 @@
-
 import commentService from '../services/commentService'
-
-import Notification from '../components/Notification'
 import { setNotification, closeNotification } from '../reducers/notificationReducer'
 
 const reducer = (state = [], action) => {
@@ -49,7 +46,7 @@ export const createNewComment = obj => {
 
 export const removeComment = (commentId) => {
     return async dispatch => {
-        const res = await commentService.remove(commentId)
+        await commentService.remove(commentId)
         dispatch({
             type: 'REMOVE_COMMENT',
             data: commentId

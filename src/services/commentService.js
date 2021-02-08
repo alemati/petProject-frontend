@@ -1,5 +1,6 @@
 import axios from 'axios'
-const baseUrl = 'http://localhost:3005/api/comments'
+const baseUrl = 'http://localhost:3006/api/comments'
+// const baseUrl = '/api/comments'
 
 let token = null
 

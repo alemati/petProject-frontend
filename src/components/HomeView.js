@@ -1,6 +1,5 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { logout } from '../reducers/loginReducer'
+import { useSelector } from 'react-redux'
 import PostPage from './PostPage'
 import PostForm from './PostForm'
 import TopBar from './TopBar'
@@ -14,8 +13,6 @@ const HomeView = () => {
     }
 
     return (
-
-
         <div >
             <div className="container">
                 <TopBar />

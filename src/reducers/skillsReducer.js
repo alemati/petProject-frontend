@@ -1,5 +1,4 @@
 import skillService from '../services/skillService'
-import Notification from '../components/Notification'
 import { setNotification, closeNotification } from '../reducers/notificationReducer'
 
 const reducer = (state = [], action) => {
@@ -61,7 +60,7 @@ export const createNewSkill = obj => {
 
 export const removeSkill = (skillId) => {
     return async dispatch => {
-        const res = await skillService.remove(skillId)
+        await skillService.remove(skillId)
         dispatch({
             type: 'REMOVE_SKILL',
             data: skillId
