@@ -7,6 +7,7 @@ const SideBarNavigation = () => {
             <Link to="/home">Posts</Link> <br />
             <Link to="/connections">Connections</Link> <br />
             <Link to="/personal">Personal</Link> <br />
+            <Link to="/settings">Settings</Link> <br />
         </div>
 
     )

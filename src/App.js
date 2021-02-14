@@ -11,6 +11,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import UsersList from './components/UsersList'
 import PersonalPage from './components/PersonalPage'
+import Settings from './components/Settings'
 import UserPage from './components/UserPage'
 import { closeNotification } from './reducers/notificationReducer'
 
@@ -45,6 +46,10 @@ const App = () => {
 
         <Route path="/personal">
           <PersonalPage />
+        </Route>
+
+        <Route path="/settings">
+          <Settings />
         </Route>
 
         <Route path="/user/:url">

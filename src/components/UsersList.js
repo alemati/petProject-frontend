@@ -9,8 +9,6 @@ import TopBar from './TopBar'
 
 import SideBarNavigation from './SideBarNavigation'
 
-
-
 import {
     Link,
 } from "react-router-dom"
@@ -59,7 +57,9 @@ const UsersList = () => {
                                 </Accordion.Toggle>
                             </Card.Header>
                             <Accordion.Collapse eventKey="1">
-                                <Card.Body><Friends login={login} users={users} allOtherUsers={allOtherUsers} myRecieved={myRecieved} /></Card.Body>
+                                <Card.Body>
+                                    <Friends login={login} users={users} allOtherUsers={allOtherUsers} myRecieved={myRecieved} />
+                                </Card.Body>
                             </Accordion.Collapse>
                         </Card>
 
